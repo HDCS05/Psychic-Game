@@ -26,7 +26,7 @@ document.onkeyup = function(event) {
 	vgamesplay++;
 	dgamesplay.textContent = vgamesplay;
 
-	if (vgamesleft > 1) {
+	if (vgamesleft >= 1) {
 		console.log("Key pressed " + event.key.toLowerCase());
 		console.log("Current ramdom value " + ramdomvalue);
 		if (event.key.toLowerCase() == ramdomvalue) {
