@@ -22,18 +22,6 @@ var userText = document.getElementById("user-text");
 // Next, we give JavaScript a function to execute when onkeyup event fires.
 document.onkeyup = function(event) {
 
-  	var playPromise = document.getElementById("playb").play();
-  	if (playPromise !== undefined) {
-    	playPromise.then(_ => {
-      // Automatic playback started!
-      // Show playing UI.
-    	})
-    	.catch(error => {
-      // Auto-play was prevented
-      // Show paused UI.
-    	});
-  	}
-
 	userText.textContent = event.key;
 	vgamesplay++;
 	dgamesplay.textContent = vgamesplay;
@@ -97,8 +85,22 @@ document.onkeyup = function(event) {
     			});
   			}
 
+      vwins = 0;
+      dwins = document.getElementById("dwins");
+      dwins.textContent = vwins;
+      vlosses = 0;
+      dlosses = document.getElementById("dlosses");
+      dlosses.textContent = vlosses;
+      vgamesleft = 6;
+      dgamesleft = document.getElementById("dgamesleft");
+      dgamesleft.textContent = vgamesleft;
+      vgamesplay = 0;
+      dgamesplay = document.getElementById("dgamesplay");
+      dgamesplay.textContent = vgamesplay;
+
 			alert("This Game Is Over");
-			location.reload();
+
+			//location.reload();
 		}
 
 	ramdomvalue = letters[Math.floor(letters.length * Math.random())];
